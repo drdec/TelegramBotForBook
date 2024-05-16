@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObsLib.Models
 {
-    internal class Reservations
+    internal class Directions
     {
-
-        internal 
+        public City From { get; set; }
+        public List<City> To { get; set; }
     }
 }

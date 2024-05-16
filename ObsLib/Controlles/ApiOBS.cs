@@ -8,10 +8,6 @@ namespace ObsLib.Controlles
 {
     public class ApiOBS
     {
-        public ApiOBS() 
-        {
-        }
-
         public string Autorizations(string phone)
         {
             return "";
@@ -19,7 +15,7 @@ namespace ObsLib.Controlles
 
         public bool EnterCode(string code)
         {
-
+            return false;
         }
 
         public string Autorizations(string phone, string chatId)

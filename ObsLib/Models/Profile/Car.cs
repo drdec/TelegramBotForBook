@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObsLib.Models.ForBook
+namespace ObsLib.Models.Profile
 {
-    internal class Route
+    internal class Car
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
         public string Number { get; set; }
+        public string Amount { get; set; }
     }
 }

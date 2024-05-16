@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObsLib.Models
+namespace ObsLib.Models.Profile
 {
-    internal class Cities
+    internal class Route
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string Area { get; set; }
-        public string Region { get; set; }
+        public string Number { get; set; }
     }
 }

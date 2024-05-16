@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObsLib.Models
+namespace ObsLib.Managers.Interfaces
 {
-    internal class Profile
+    internal interface IDirections
     {
-        
+
     }
 }
