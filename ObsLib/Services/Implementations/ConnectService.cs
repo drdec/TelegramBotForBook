@@ -9,15 +9,45 @@ namespace ObsLib.Services.Implementations
 {
     internal class ConnectService : IConnectServices
     {
-        private readonly string _token;
-        public ConnectService(string token) 
+
+        public string Token { get; set; }
+        public string URL { get; set; }
+
+        public ConnectService(string token, string url)
         {
-            _token = token;
+            Token = token;
+            URL = url;
         }
 
-        public Task<string> SendRequest()
+        public async Task<string> SendRequest(string data, HttpMethod httpMethod)
         {
-            return null;
+            using var httpClient = new HttpClient();
+            var request = new HttpRequestMessage(httpMethod, URL);
+            var content = new StringContent(data, null, "application/json");
+            
+            request.Content = content;
+
+            if (Token != "")
+            {
+                request.Headers.Add("authorization", $"Bearer {Token}");
+            }
+
+            var response = await httpClient.SendAsync(request);
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<string> SendRequest(HttpMethod httpMethod)
+        {
+            using var httpClient = new HttpClient();
+            var request = new HttpRequestMessage(httpMethod, URL);
+
+            if (Token != "")
+            {
+                request.Headers.Add("authorization", $"Bearer {Token}");
+            }
+
+            var response = await httpClient.SendAsync(request);
+            return await response.Content.ReadAsStringAsync();
         }
     }
 }

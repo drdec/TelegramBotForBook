@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ObsLib.Services.Implementations
 {
-    internal class FileService : IFileServices
+    internal class FileService : IFileService
     {
         private readonly IReaderServices _readServices;
         private readonly IWriterServices _writeServices;

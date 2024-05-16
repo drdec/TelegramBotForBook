@@ -10,7 +10,7 @@ namespace ObsLib.Managers.Interfaces
 {
     internal interface IAutentification
     {
-        Task<V2Authentication> Autentification(User user);
+        Task<User> Autentification(string phone);
         Task<string> Autorisation(string phone, string code);
     }
 }

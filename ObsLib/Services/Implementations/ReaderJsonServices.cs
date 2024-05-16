@@ -13,10 +13,17 @@ namespace ObsLib.Services.Implementations
     {
         public async Task<List<User>> ReadDataAsync()
         {
-            using var reader = new StreamReader("data.json");
+            try
+            {
+                using var reader = new StreamReader("data.json");
 
-            var json = await reader.ReadToEndAsync();
-            return JsonConvert.DeserializeObject<List<User>>(json);
+                var json = await reader.ReadToEndAsync();
+                return JsonConvert.DeserializeObject<List<User>>(json);
+            }
+            catch (Exception)
+            {
+                return new List<User>();
+            }
         }
     }
 }
